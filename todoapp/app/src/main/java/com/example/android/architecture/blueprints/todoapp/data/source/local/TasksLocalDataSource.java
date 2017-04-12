@@ -57,6 +57,7 @@ public class TasksLocalDataSource implements TasksDataSource {
     /**
      * Note: {@link LoadTasksCallback#onDataNotAvailable()} is fired if the database doesn't exist
      * or the table is empty.
+     * 获取所有任务，最后执行回调函数
      */
     @Override
     public void getTasks(@NonNull LoadTasksCallback callback) {
@@ -103,6 +104,7 @@ public class TasksLocalDataSource implements TasksDataSource {
     /**
      * Note: {@link GetTaskCallback#onDataNotAvailable()} is fired if the {@link Task} isn't
      * found.
+     * 获取指定id的任务，最后执行回调函数
      */
     @Override
     public void getTask(@NonNull String taskId, @NonNull GetTaskCallback callback) {

@@ -54,8 +54,14 @@ import static com.google.common.base.Preconditions.checkNotNull;
  */
 public class TasksFragment extends Fragment implements TasksContract.View {
 
+    /**
+     * View通知Presenter处理相关事件
+     */
     private TasksContract.Presenter mPresenter;
 
+    /**
+     * 任务适配器
+     */
     private TasksAdapter mListAdapter;
 
     private View mNoTasksView;
@@ -92,11 +98,13 @@ public class TasksFragment extends Fragment implements TasksContract.View {
 
     @Override
     public void setPresenter(@NonNull TasksContract.Presenter presenter) {
+        // 初始化Presenter
         mPresenter = checkNotNull(presenter);
     }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        // 将事件分发给Presenter处理
         mPresenter.result(requestCode, resultCode);
     }
 

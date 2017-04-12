@@ -33,11 +33,15 @@ import static com.google.common.base.Preconditions.checkNotNull;
 /**
  * Listens to user actions from the UI ({@link TasksFragment}), retrieves the data and updates the
  * UI as required.
+ * 监听用户的操作，按指示检索数据和更新UI。
  */
 public class TasksPresenter implements TasksContract.Presenter {
 
     private final TasksRepository mTasksRepository;
 
+    /**
+     * Presenter通知View进行相关update
+     */
     private final TasksContract.View mTasksView;
 
     private TasksFilterType mCurrentFiltering = TasksFilterType.ALL_TASKS;

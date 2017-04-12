@@ -48,6 +48,7 @@ public class TasksActivity extends AppCompatActivity {
         setContentView(R.layout.tasks_act);
 
         // Set up the toolbar.
+        // 设置工具条
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ActionBar ab = getSupportActionBar();
@@ -62,6 +63,7 @@ public class TasksActivity extends AppCompatActivity {
             setupDrawerContent(navigationView);
         }
 
+        // 任务Fragment
         TasksFragment tasksFragment =
                 (TasksFragment) getSupportFragmentManager().findFragmentById(R.id.contentFrame);
         if (tasksFragment == null) {
@@ -72,6 +74,7 @@ public class TasksActivity extends AppCompatActivity {
         }
 
         // Create the presenter
+        //
         mTasksPresenter = new TasksPresenter(
                 Injection.provideTasksRepository(getApplicationContext()), tasksFragment);
 
